@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="US-ASCII">
+<title>profile</title>
+</head>
+<body>
+<div style="width:1200px" class="container">
+	<div class="row" style="margin-top:20px;">
+	<ul class="unstyled">
+		<li><img src="{{profileImageUrl}}" alt="" style="height:185px;width:185px"class="img-rounded right-nav"></li>
+		<li><input type="button" class="btn-primary" value="upload image" ng-click="triggerProfileImagefile()"/><input id="userImageId" type="file" style="display:none;" name="pimage" ng-model="pifile" ng-change="uploadProfileImages()" ></li>
+	</ul>
+	</div>
+	<div class="row" style="margin-top:20px;margin-left:10px;">
+	<table class="table table-hover">
+		<tr>
+			<td>User Name</td><td>{{uname}}</td>
+		</tr>
+		<tr>
+			<td>User Mail</td><td>{{umail}}</td>
+		</tr>
+		<tr>
+			<td>User UniqueId</td><td>{{uid}}</td>
+		</tr>
+		<tr>
+			<td>User Streams</td><td>{{scount}}</td>
+		</tr>
+		<tr>
+			<td>Subscribed Streams</td><td>{{sscount}}</td>
+		</tr>
+	</table>
+	</div>
+</div>
+</body>
+</html>

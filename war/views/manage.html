@@ -1,0 +1,94 @@
+<div style="width:1200px" class="container">
+<h2>Add New Stream</h2>
+<div class="row" style="margin:10px;">
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th>Name</th>
+			<th>Stream Description</th>
+			<th>Stream Image</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>
+				<input type="text" ng-model="newStreamName" ng-model="newStreamName"/>
+			</td>
+			<td>
+				<textarea ng-model="newStremDesc" class="textarea_desc" name="newStreamDesc"></textarea>
+			</td>
+			<td>
+				<input type="file" id='fileValue' name="imageUrl" ng-model="Sifile" ng-change="getStreamImageFile()"/>
+			</td>
+			<td>
+				<input type="button" class="btn-success" value="add stream" ng-click="addNewStream()"/>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+<h2>Subscribed Stream</h2>
+<div class="row" style="margin:10px;">
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th>Name</th>
+			<th>Stream owner</th>
+			<th>Number of Pictures</th>
+			<th>Unsubscribe</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="sInfo in subscribedStreamData">
+			<td>
+				{{sInfo.streamName}}
+			</td>
+			<td>
+				{{sInfo.lastUpdateTime}}
+			</td>
+			<td>
+				{{sInfo.imageCount}}
+			</td>
+			<td>
+				<input type="checkbox" name="{{sInfo.streamId}}" ng-model="streamsSelected[sInfo.streamId]" />
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	<div class="row" style="margin:10px;">
+		<input type="button" class="btn-danger" ng-click="unsubscribe()" value="unsubscribe selected">
+	</div>
+</div>
+<h2>Delete Stream</h2>
+<div class="row" style="margin:10px;">
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th>Name</th>
+			<th>Last Activity</th>
+			<th>Number of Pictures</th>
+			<th>Delete</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="sInfo in streamsData">
+			<td>
+				{{sInfo.streamName}}
+			</td>
+			<td>
+				{{sInfo.lastUpdateTime}}
+			</td>
+			<td>
+				{{sInfo.imageCount}}
+			</td>
+			<td>
+				<input type="checkbox" name="{{sInfo.streamId}}" ng-model="streamsSelected[sInfo.streamId]" />
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	<div class="row" style="margin:10px;">
+		<input type="button" class="btn-danger" ng-click="deleteCheckedStream()" value="delete selected">
+	</div>
+</div>
+</div>

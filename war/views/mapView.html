@@ -1,0 +1,45 @@
+<div style="height: 600px; width: 800px" class="container">
+	<a href="#/stream/view"><img style="height:32px;width:32px;" src="../images/bck-icn.png"></a>
+	<ul class="nav nav-pills rght-nav">
+		<li><a href="#/image/imageView">image view</a></li>
+		<li class="active"><a href="#/image/mapView">map view</a></li>
+	</ul>
+	 <!-- <select ng-model="currentScope" class="selectpicker" ng-controller="streamEditor" id="csid" ng-change="getDataForTheCurrentStream()">
+	    	<option ng-repeat="stream in streamsData" >
+	    		{{stream.streamName}}
+	    	</option>
+	</select>-->
+	<div style="height:100%;width:100%" id="mapPlacer" onload="initMap()">
+		<!--  
+		<div ng-repeat="image in images">
+			<span style="" class="mapHolderPoints"></span>
+		</div>
+		-->
+	</div>
+</div>
+<div style="position:relative; width:60%; margin-top:120px; margin-bottom:120px;" class="container">
+<div id="dRangeSlider" style="position:relative" ng-controller="mapViewController"></div>
+</div>
+<script type="text/javascript">
+	console.info("inn");
+	var minDate	=	new Date(2013, 0, 1);
+	var maxDate	=   new Date(2017, 11, 31);
+	$("#dRangeSlider").dateRangeSlider({
+		bounds:{
+			    min: minDate,
+			    max: maxDate
+			  },
+	  	defaultValues:{
+		    	min: new Date(2014, 0, 1),
+		    	max: new Date(2016, 0, 1)
+		  	  }			  
+	});
+	
+	$("#dRangeSlider").bind("valuesChanged", function(e, data){
+		  console.log("Values just changed. min: " + data.values.min.getTime() + " max: " + data.values.max.getTime());
+		  appData.minimumVal	=	data.values.min.getTime();
+		  appData.maximumVal	=	data.values.max.getTime();
+		  angular.element('#dRangeSlider').scope().getImagesDataFromServerByRange();
+	});
+
+</script>

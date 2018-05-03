@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="US-ASCII">
+<title>Search</title>
+</head>
+<body>
+<div style="height:720px;width:820px" class="container" class="row">
+	<input type="text" ng-model="searchText" placeholder="search streams" ng-blur="searchStreams()" ng-keypress="searchStreams()" ng-keydown="searchStreams()"/>
+	<div style="height:690px;width:800px" class="container">
+		<div class="row imagePaneDiv">
+			<span style="margin-left:5px;" ng-repeat="sInfo in searchStreamsData"> 
+			
+				<input type="checkbox" ng-model="sInfo.subscribe"/>
+				<img id="{{sInfo.streamId}}_search" style="margin: 25px; padding:8px;"
+				src="{{sInfo.imageUrl}}=s140" class="img-rounded col-md-1" ng-click="openStream(sInfo.streamId)"/>				
+			</span>
+			
+		</div>
+		
+	<input type="button" style="margin-top:20px;" class="btn-success" value="subscribe" ng-click="subscribeStreams()">
+	</div>
+</div>
+</body>
+</html>

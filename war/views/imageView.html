@@ -1,0 +1,60 @@
+<div>
+<div style="height:690px;width:800px" class="container">
+	<div class="row">
+		<a href="#/stream/view"><img style="height:32px;width:32px;" src="../images/bck-icn.png"></a>
+		<ul class="nav nav-pills rght-nav">
+			<li class="active"><a href="#/image/imageView">image view</a></li>
+			<li><a href="#/image/mapView">map view</a></li>
+		</ul>
+		<!--<select ng-model="currentStream" class="selectpicker" id="csid" ng-controller="streamEditor" ng-change="getDataForTheCurrentStream()">
+	    	<option value="{{stream.streamName}}" ng-repeat="stream in streamsData">
+	    		{{stream.streamName}}
+	    	</option>
+		</select>  -->
+	</div>
+	<div class="row imagePaneDiv">
+		<span ng-repeat="image in images"> <img style="margin: 25px; padding:8px;"
+			src="{{image.imageUrl}}=s{{imageSize}}" class="img-rounded col-md-1" />
+		</span>
+	</div>
+</div>
+
+<div style="height:300px;width:800px;display:{{urluploadDisplay}}" class="container">
+<div class="row">
+<ul class="nav nav-pills rght-nav">
+	<li ng-class="isUrluploadDisplayActive" ng-click="makeUrluploadDisplayTrue()"><a>url upload</a></li>
+	<li ng-class="isFileuploadDisplayActive" ng-click="makeFileuploadDisplayTrue()"><a>file upload</a></li>
+</ul>
+<select ng-model="imageSize" class="selectpicker">
+	    <option value="140">small</option>
+	    <option value="280">medium</option>
+	    <option value="620">large</option>
+</select>
+</div>
+<div class="row">
+		<textarea ng-model="url_csv" placeholder="Enter an image url or list in csv format" class="form-control textarea_url" rows="3">{{url_csv}}</textarea>
+		<input type="button" class="btn btn-success" value="upload images from urls" ng-click="submitCsvForUpload()"/>
+</div>
+</div>
+<div style="height:300px;width:800px;display:{{fileuploadDisplay}}" class="container">
+<div class="row">
+<ul class="nav nav-pills rght-nav">
+	<li ng-class="isUrluploadDisplayActive" ng-click="makeUrluploadDisplayTrue()"><a>url upload</a></li>
+	<li ng-class="isFileuploadDisplayActive" ng-click="makeFileuploadDisplayTrue()"><a>file upload</a></li>
+</ul>
+<select ng-model="imageSize" class="selectpicker">
+	    <option value="140">small</option>
+	    <option value="300">medium</option>
+	    <option value="600">large</option>
+</select>
+</div>
+<div class="row">
+	<ul class="unstyled">
+		<li><input ng-repeat="fileNo in filecount" type="file" ng-model="imFile[fileNo]" name="file_{{fileNo}}" ng-change="getImageFileForUpload('file_'+fileNo)"></li>	
+	</ul>
+</div>
+<div class="row">
+		<input type="button" class="btn" value="add another files group" ng-click="addFileoption()"/>
+		<input type="button" class="btn-success" value="Upload files" ng-click="uploadFiles()"/>
+</div>
+</div>

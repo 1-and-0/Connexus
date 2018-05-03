@@ -1,0 +1,13 @@
+<div class="row">
+	<div style="height:690px;width:800px" class="container">
+		<ul class="nav nav-pills rght-nav">
+			<li class="active"><a href="#/stream/view">Your Stream</a></li>
+			<li><a href="#/stream/subscribed">Subscribed</a></li>
+		</ul>
+		<div class="row imagePaneDiv">
+			<span ng-repeat="sInfo in streamsData"> 
+				<img id="{{sInfo.streamId}}_stream" style="margin: 25px; padding:8px;" src="{{sInfo.imageUrl}}=s140" ng-click="openStream(sInfo.streamId)" class="img-rounded col-md-1" />
+			</span>
+		</div>
+	</div>
+</div>

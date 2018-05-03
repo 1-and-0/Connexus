@@ -1,0 +1,79 @@
+.mapHolder {
+	position: relative;
+	height: 600px;
+	width: 800px;
+	max-height: 600px;
+	max-width: 800px;
+	min-height: 600px;
+	min-width: 800px;
+	background-image: url("/images/map8x6.jpg");
+	overflow: hidden;
+}
+
+.mapHolder2 {
+	position: relative;
+	height: 600px;
+	width: 800px;
+	max-height: 600px;
+	max-width: 800px;
+	min-height: 600px;
+	min-width: 800px;
+}
+
+.mapHolderPoints {
+	position: absolute;
+	height: 17px;
+	width: 22px;
+	background-color: rgb(224, 131, 131);
+	border-radius: 5px;
+}
+
+.imagePaneDiv {
+	background-color: #D4D4D4;
+	max-height: 400px;
+	max-width: 800px;
+	min-height: 600px;
+	min-width: 800px;
+	overflow: scroll;
+	position: relative;
+}
+
+.rght-nav {
+	float: right;
+	margin-left: 10px;
+	margin-right: 0;
+	position: relative
+}
+
+.sign-up-div {
+	margin-top: 30px;
+	margin-left: 30px;
+	margin-bottom:20px;
+	margin-right:10px;
+	height: 250px;
+	width: 250px;
+	overflow: hidden;
+	border-radius: 5px;
+	background-color: rgba(245, 248, 239, 0.95)
+}
+
+.textarea_url {
+	width: 500px;
+	min-width: 500px;
+	max-width: 500px;
+	height: 100px;
+	min-height: 100px;
+	max-height: 100px;
+	resize: none;
+	margin: 30px;
+}
+
+.textarea_desc {
+	width: 300px;
+	min-width: 300px;
+	max-width: 300px;
+	height: 50px;
+	min-height: 50px;
+	max-height: 50px;
+	resize: none;
+}

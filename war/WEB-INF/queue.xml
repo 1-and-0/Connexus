@@ -1,0 +1,30 @@
+<queue-entries>
+
+	<queue>
+		<name>addImage</name>
+		<rate>50/s</rate>
+		<bucket-size>70</bucket-size>
+		<max-concurrent-requests>30</max-concurrent-requests>
+		<retry-parameters>
+			<task-retry-limit>2</task-retry-limit>
+			<min-backoff-seconds>1</min-backoff-seconds>
+			<max-backoff-seconds>3</max-backoff-seconds>
+			<max-doublings>0</max-doublings>
+		</retry-parameters>
+	</queue>
+	
+	<queue>
+		<name>addStream</name>
+		<rate>30/s</rate>
+		<bucket-size>70</bucket-size>
+		<max-concurrent-requests>20</max-concurrent-requests>
+
+		<retry-parameters>
+			<task-retry-limit>2</task-retry-limit>
+			<min-backoff-seconds>1</min-backoff-seconds>
+			<max-backoff-seconds>3</max-backoff-seconds>
+			<max-doublings>0</max-doublings>
+		</retry-parameters>
+	</queue>
+	
+</queue-entries>
